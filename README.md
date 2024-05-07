@@ -94,7 +94,7 @@ Criar documentação.
 ![alt text](<Captura de Tela (956).png>)
 
 - #### EC2 Web Server - Inbound rules
-![alt text](<Captura de Tela (957).png>)
+![alt text](<Captura de Tela (974).png>)
 
 - #### RDS - Inbound rules
 ![alt text](<Captura de Tela (958).png>)
@@ -331,11 +331,11 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
     - Utilizei o comando `use wordpress;` para selecionar o banco de dados **wordpress**.
     - Utilize o comando `show tables;` para listar todas as tabelas criadas dentro do banco de dados **wordpress**.
 
-![alt text](<Captura de Tela (962).png>)
+![alt text](<Captura de Tela (964).png>)
 
 
 #### Demonstração de login do wordpress. 🚀
--
+![alt text](<Captura de Tela (972).png>)
 
 ### Referencia para a criação do projeto.
 - **Sites oficiais da AWS e o Docker:**
