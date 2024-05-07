@@ -55,8 +55,7 @@ versionamento;
 Criar documentação.
 
 #### TOPOLOGIA.
-
-![alt text](<Captura de Tela (917).png>)
+![alt text](<Captura de Tela (777).png>)
 
 - Busque por VPC, no campo de pesquisa do console AWS.
 - Ligeiramente abaixo do campo de pesquisa, click em **Create VPC**.
@@ -255,6 +254,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Em **Register targets**, **Available instances** selecionei as duas instâncias criadas anteriormente.
 - Clique em **include as pending below**.
 - Clique em **Create Target group** para finalizar.
+
 ![alt text](<Captura de Tela (927).png>)
 
 #### Criação do Classic Load Balancer. 
@@ -270,6 +270,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Em Default action, no campo **Target** selecionei o grupo **Target groups** que foi criado anteriormente.
 - Na seção **Health checks**, no campo **Ping path** deixei o caminho raiz "/".
 - Cliquei em **Create load balancer** para finalizar.
+
 ![alt text](<Captura de Tela (932).png>)
 
 #### Associando o Target group ao Classic Load Balancer.
@@ -277,6 +278,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Escolha a opção **Associate with an existing load balancer**.
 - Voçê será direcionado ao **Classic Load Balancer**.
 - E então, é só concluir a configuração.
+
 ![alt text](<Captura de Tela (933).png>)
 
 #### Baixar e instalar o PuTTY, opção para conectar a uma máquina Linux através do sistema operacional Windows.
