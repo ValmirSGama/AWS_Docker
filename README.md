@@ -336,7 +336,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 
 ![Captura de Tela (964)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/d137e6fa-33f0-4a37-8847-f8396afccbbe)
 
-#### Demonstração de login do wordpress. 🚀
+#### Login do Wordpress via DNS do Load Balancer. 🚀
 ![Captura de Tela (972)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/be648ca7-aa3d-439f-84a9-30843049f735)
 
 ### Referencia para a criação do projeto.
