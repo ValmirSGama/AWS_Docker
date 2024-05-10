@@ -1,5 +1,9 @@
-# AWS_Docker
+<h1 align="center">AWS_Docker</h1>
 <h1 align="center">Atividade AWS - Docker Unicesumar-Ufopa</h1>
+
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/ValmirSGama/AWS_Docker/blob/main/LICENSE) 
+![GitHub repo size](https://img.shields.io/github/repo-size/ValmirSGama/AWS_Docker)
+
 
 ## Descrição:   
 **1º** instalação e configuração do
@@ -28,10 +32,6 @@ aplicação Wordpress
 do serviços WP (Evitem publicar o
 serviço WP via IP Público)
 
-  * não utilizar ip público para saída
-do serviços WP (Evitem publicar o
-serviço WP via IP Público)
-
   * pastas públicas e estáticos do
 wordpress sugestão de utilizar
 o
@@ -55,7 +55,7 @@ versionamento;
 Criar documentação.
 
 #### TOPOLOGIA.
-![alt text](<Captura de Tela (777).png>)
+![Captura de Tela (777)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/6ab7b99b-bcea-42f6-bb26-5094189075b0)
 
 - Busque por VPC, no campo de pesquisa do console AWS.
 - Ligeiramente abaixo do campo de pesquisa, click em **Create VPC**.
@@ -70,11 +70,11 @@ Criar documentação.
 - As demais configurações permaneceram o padrão.
 - Finalizando, click em “Create VPC”, em seguida teremos:
 
-![alt text](<Captura de Tela (780).png>)
+![Captura de Tela (780)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/ab0a9c7d-5304-49f3-9714-9ecf670a209a)
 
 **Segue o Resouce map da topologia.**
 
-![alt text](<Captura de Tela (918).png>)
+![Captura de Tela (918)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/29d7e748-faf3-48ef-8e0a-ac1a21a6e879)
 
  #### Criando credenciais de segurança para acesso ao ambiente. 🔑
 - Busque por EC2, no campo de pesquisa do console AWS.
@@ -91,16 +91,16 @@ Criar documentação.
 - Crie e configure os seguintes security groups usando a VPC criada anteriormente:
 
 - #### Load Balancer - Inbound rules
-![alt text](<Captura de Tela (956).png>)
+![Captura de Tela (956)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/92c473fd-5bf8-4459-9ffa-ed5fdc600a8c)
 
 - #### EC2 Web Server - Inbound rules
-![alt text](<Captura de Tela (974).png>)
+![Captura de Tela (974)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/a1c5f0c8-da51-4217-b67e-4fec927f3010)
 
 - #### RDS - Inbound rules
-![alt text](<Captura de Tela (958).png>)
+![Captura de Tela (958)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/d42340e1-3ed0-4d0f-9310-dff3f9cc8f0b)
 
 - #### EFS - Inbound rules
-![alt text](<Captura de Tela (959).png>)
+![Captura de Tela (959)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/a4f59e60-dbc7-462d-913a-0e39a6d8e525)
 
 #### Criação do Launch Template para a EC2. 🎯
 - Acesse No console AWS, pesquise por **EC2**.
@@ -255,7 +255,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Clique em **include as pending below**.
 - Clique em **Create Target group** para finalizar.
 
-![alt text](<Captura de Tela (927).png>)
+![Captura de Tela (927)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/84098580-3c40-4980-afe3-3434a8b94256)
 
 #### Criação do Classic Load Balancer. 
 - No console AWS, pesquise por **EC2**.
@@ -271,7 +271,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Na seção **Health checks**, no campo **Ping path** deixei o caminho raiz "/".
 - Cliquei em **Create load balancer** para finalizar.
 
-![alt text](<Captura de Tela (932).png>)
+![Captura de Tela (932)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/58a0dffa-4ada-4e8a-bf12-036c56320f0f)
 
 #### Associando o Target group ao Classic Load Balancer.
 - Na página do **Target groups**, clique no Link que diz: **None Associate**.
@@ -279,7 +279,10 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Voçê será direcionado ao **Classic Load Balancer**.
 - E então, é só concluir a configuração.
 
-![alt text](<Captura de Tela (933).png>)
+![Captura de Tela (933)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/37a7142a-f959-46e1-bac6-d617c7ea98d9)
+
+#### O Resouse map do Load Balancer rastreando o tráfego nas duas instâncias.
+![Captura de Tela (980)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/5976bcfe-7a32-4d39-8feb-142bae71ee8a)
 
 #### Baixar e instalar o PuTTY, opção para conectar a uma máquina Linux através do sistema operacional Windows.
 - Segue o link para o PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html 
@@ -301,7 +304,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
     - Utilize o comando `df -h` para verificar se o **EFS** está montado.
     - Utilize o comando `cat /etc/fstab` para verificar se a **montagem persistente** está configurada.
 
-![alt text](<Captura de Tela (948).png>)
+![Captura de Tela (948)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/b5fefc3c-b8c8-42b6-8aa5-0e94d9fef958)
 
 - Testando o docker e docker-compose:
     - Utilize o comando `docker ps` para verificar se o container **wordpress** está executando.
@@ -309,7 +312,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
         ```
         docker-compose -f /mnt/efs/docker-compose.yml ps
         ```
-![alt text](<Captura de Tela (961).png>)
+![Captura de Tela (961)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/53b61e3e-1ca0-4f8d-8884-f8d45ee6b46b)
 
 - Acessando o banco de dados da aplicação WordPress:
     - Copiar o ID do container **wordpress**.
@@ -331,11 +334,10 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
     - Utilizei o comando `use wordpress;` para selecionar o banco de dados **wordpress**.
     - Utilize o comando `show tables;` para listar todas as tabelas criadas dentro do banco de dados **wordpress**.
 
-![alt text](<Captura de Tela (964).png>)
-
+![Captura de Tela (964)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/d137e6fa-33f0-4a37-8847-f8396afccbbe)
 
 #### Demonstração de login do wordpress. 🚀
-![alt text](<Captura de Tela (972).png>)
+![Captura de Tela (972)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/be648ca7-aa3d-439f-84a9-30843049f735)
 
 ### Referencia para a criação do projeto.
 - **Sites oficiais da AWS e o Docker:**
