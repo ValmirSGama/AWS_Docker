@@ -89,16 +89,16 @@ Criar documentação.
 - Crie e configure os seguintes security groups usando a VPC criada anteriormente:
 
 - #### Load Balancer - Inbound rules
-![Load Balancer Inbound](SRC/Load%20Balancer%20Inbound.png)
+![Load Balancer Inbound](src/Load%20Balancer%20Inbound.png)
 
 - #### EC2 Web Server - Inbound rules
 ![EC2 Web Server](src/EC2%20Web%20Server.png)
 
 - #### RDS - Inbound rules
-![RDS](SRC/RDS.png)
+![RDS](src/RDS.png)
 
 - #### EFS - Inbound rules
-![EFS](SRC/EFS.png)
+![EFS](src/EFS.png)
 
 #### Criação do Launch Template para a EC2. 🎯
 - Acesse No console AWS, pesquise por **EC2**.
@@ -253,7 +253,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Clique em **include as pending below**.
 - Clique em **Create Target group** para finalizar.
 
-![Target group](SRC/Target%20group.png)
+![Target group](src/Target%20group.png)
 
 #### Criação do Classic Load Balancer. 
 - No console AWS, pesquise por **EC2**.
@@ -280,7 +280,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 ![Associando o Target group ao Classic Load Balancer](src/Associando%20o%20Target%20group%20ao%20Classic%20Load%20Balancer.png)
 
 #### O Resouse map do Load Balancer rastreando o tráfego nas duas instâncias.
-![Resouse map do Load Balancer](SRC/Resouse%20map%20do%20Load%20Balancer.png)
+![Resouse map do Load Balancer](src/Resouse%20map%20do%20Load%20Balancer.png)
 
 #### Baixar e instalar o PuTTY, opção para conectar a uma máquina Linux através do sistema operacional Windows.
 - Segue o link para o PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html 
@@ -302,7 +302,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
     - Utilize o comando `df -h` para verificar se o **EFS** está montado.
     - Utilize o comando `cat /etc/fstab` para verificar se a **montagem persistente** está configurada.
 
-![montagem do EFS](SRC/montagem%20do%20EFS.png)
+![montagem do EFS](src/montagem%20do%20EFS.png)
 
 - Testando o docker e docker-compose:
     - Utilize o comando `docker ps` para verificar se o container **wordpress** está executando.
@@ -310,7 +310,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
         ```
         docker-compose -f /mnt/efs/docker-compose.yml ps
         ```
-![docker-compose](SRC/docker-compose.png)
+![docker-compose](src/docker-compose.png)
 
 - Acessando o banco de dados da aplicação WordPress:
     - Copiar o ID do container **wordpress**.
@@ -355,4 +355,4 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 
 ![UOL](src/UOL.png)
 
-![UniCessumar](SRC/Unicesumar.png)
+![UniCessumar](src/Unicesumar.png)
