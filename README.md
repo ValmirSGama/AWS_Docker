@@ -55,7 +55,7 @@ versionamento;
 Criar documentação.
 
 #### TOPOLOGIA.
-![Captura de Tela (777)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/6ab7b99b-bcea-42f6-bb26-5094189075b0)
+![TOPOLOGIA](src/TOPOLOGIA.png)
 
 - Busque por VPC, no campo de pesquisa do console AWS.
 - Ligeiramente abaixo do campo de pesquisa, click em **Create VPC**.
@@ -70,11 +70,9 @@ Criar documentação.
 - As demais configurações permaneceram o padrão.
 - Finalizando, click em “Create VPC”, em seguida teremos:
 
-![Captura de Tela (780)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/ab0a9c7d-5304-49f3-9714-9ecf670a209a)
-
 **Segue o Resouce map da topologia.**
 
-![Captura de Tela (918)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/29d7e748-faf3-48ef-8e0a-ac1a21a6e879)
+![VPC](src/VPC.png)
 
  #### Criando credenciais de segurança para acesso ao ambiente. 🔑
 - Busque por EC2, no campo de pesquisa do console AWS.
@@ -91,16 +89,16 @@ Criar documentação.
 - Crie e configure os seguintes security groups usando a VPC criada anteriormente:
 
 - #### Load Balancer - Inbound rules
-![Captura de Tela (956)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/92c473fd-5bf8-4459-9ffa-ed5fdc600a8c)
+![Load Balancer Inbound](SRC/Load%20Balancer%20Inbound.png)
 
 - #### EC2 Web Server - Inbound rules
-![Captura de Tela (974)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/a1c5f0c8-da51-4217-b67e-4fec927f3010)
+![EC2 Web Server](src/EC2%20Web%20Server.png)
 
 - #### RDS - Inbound rules
-![Captura de Tela (958)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/d42340e1-3ed0-4d0f-9310-dff3f9cc8f0b)
+![RDS](SRC/RDS.png)
 
 - #### EFS - Inbound rules
-![Captura de Tela (959)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/a4f59e60-dbc7-462d-913a-0e39a6d8e525)
+![EFS](SRC/EFS.png)
 
 #### Criação do Launch Template para a EC2. 🎯
 - Acesse No console AWS, pesquise por **EC2**.
@@ -255,7 +253,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Clique em **include as pending below**.
 - Clique em **Create Target group** para finalizar.
 
-![Captura de Tela (927)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/84098580-3c40-4980-afe3-3434a8b94256)
+![Target group](SRC/Target%20group.png)
 
 #### Criação do Classic Load Balancer. 
 - No console AWS, pesquise por **EC2**.
@@ -271,7 +269,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Na seção **Health checks**, no campo **Ping path** deixei o caminho raiz "/".
 - Cliquei em **Create load balancer** para finalizar.
 
-![Captura de Tela (932)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/58a0dffa-4ada-4e8a-bf12-036c56320f0f)
+![load balancer](src/load%20balancer.png)
 
 #### Associando o Target group ao Classic Load Balancer.
 - Na página do **Target groups**, clique no Link que diz: **None Associate**.
@@ -279,10 +277,10 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Voçê será direcionado ao **Classic Load Balancer**.
 - E então, é só concluir a configuração.
 
-![Captura de Tela (933)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/37a7142a-f959-46e1-bac6-d617c7ea98d9)
+![Associando o Target group ao Classic Load Balancer](src/Associando%20o%20Target%20group%20ao%20Classic%20Load%20Balancer.png)
 
 #### O Resouse map do Load Balancer rastreando o tráfego nas duas instâncias.
-![Captura de Tela (980)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/5976bcfe-7a32-4d39-8feb-142bae71ee8a)
+![Resouse map do Load Balancer](SRC/Resouse%20map%20do%20Load%20Balancer.png)
 
 #### Baixar e instalar o PuTTY, opção para conectar a uma máquina Linux através do sistema operacional Windows.
 - Segue o link para o PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html 
@@ -293,7 +291,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 - Em Private-Key file for authentication, click em Browse.
 - Você será direcionado a encontrar a chave Key pair que foi crianda, selecione-a e click em Open.
 
-![Captura de Tela (605)](https://github.com/ValmirSGama/Projeto-AWS/assets/111182775/542eda1c-9418-4371-bd4b-9e699789f641)
+![PuTTY](src/Putty.png)
 
 - No primeiro acesso ao  PuTTY, aparecerá um painel notificando se você confia no servidor e quer continuar. Click em “Accept”.
 - Dendro do  PuTTY, em login as: insira o nome da máquina EC2 Linux, por padrão, é `ec2-user`.
@@ -304,7 +302,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
     - Utilize o comando `df -h` para verificar se o **EFS** está montado.
     - Utilize o comando `cat /etc/fstab` para verificar se a **montagem persistente** está configurada.
 
-![Captura de Tela (948)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/b5fefc3c-b8c8-42b6-8aa5-0e94d9fef958)
+![montagem do EFS](SRC/montagem%20do%20EFS.png)
 
 - Testando o docker e docker-compose:
     - Utilize o comando `docker ps` para verificar se o container **wordpress** está executando.
@@ -312,7 +310,7 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
         ```
         docker-compose -f /mnt/efs/docker-compose.yml ps
         ```
-![Captura de Tela (961)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/53b61e3e-1ca0-4f8d-8884-f8d45ee6b46b)
+![docker-compose](SRC/docker-compose.png)
 
 - Acessando o banco de dados da aplicação WordPress:
     - Copiar o ID do container **wordpress**.
@@ -334,10 +332,10 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
     - Utilizei o comando `use wordpress;` para selecionar o banco de dados **wordpress**.
     - Utilize o comando `show tables;` para listar todas as tabelas criadas dentro do banco de dados **wordpress**.
 
-![Captura de Tela (964)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/d137e6fa-33f0-4a37-8847-f8396afccbbe)
+![banco de dados da aplicação WordPress](src/banco%20de%20dados%20da%20aplicação%20WordPress.png)
 
 #### Login do Wordpress via DNS do Load Balancer. 🚀
-![Captura de Tela (972)](https://github.com/ValmirSGama/AWS_Docker/assets/111182775/be648ca7-aa3d-439f-84a9-30843049f735)
+![Login do Wordpress](src/Login%20do%20Wordpress.png)
 
 ### Referencia para a criação do projeto.
 - **Sites oficiais da AWS e o Docker:**
@@ -355,7 +353,6 @@ docker-compose -f /mnt/efs/docker-compose.yml up -d
 --- 
 - Projeto criando por **Valmir Sales Gama** durante o programa de bolsas da **Compass UOL** com parceria com a **Unicesumar** no mês: 05/2024
 
-![logo](https://github.com/ValmirSGama/Projeto-AWS/assets/111182775/9590599e-71e4-45c2-a9ec-d0cd85cf66d1)
+![UOL](src/UOL.png)
 
-![image](https://github.com/ValmirSGama/Projeto-AWS/assets/111182775/c6a05c73-c30b-4225-89b4-594a6b521bf4)
-
+![UniCessumar](SRC/Unicesumar.png)
